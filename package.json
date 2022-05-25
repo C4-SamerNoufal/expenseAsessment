@@ -1,0 +1,34 @@
+{
+  "name": "expenseasessment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/C4-SamerNoufal/expenseAsessment.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/C4-SamerNoufal/expenseAsessment/issues"
+  },
+  "homepage": "https://github.com/C4-SamerNoufal/expenseAsessment#readme",
+  "dependencies": {
+    "@types/node": "^17.0.35",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "pg": "^8.7.3",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.20.0",
+    "ts-node": "^10.8.0",
+    "typescript": "^4.7.2"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^6.4.1",
+    "ts-node-dev": "^1.1.8"
+  }
+}

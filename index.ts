@@ -7,6 +7,7 @@ import {categories} from './seeders/categories';
 import {expenses} from './seeders/expenses';
 ///////////////
 const { userRouter } = require("./routes/userRouter");
+const { categoryRouter } = require("./routes/categoryRouter");
 
 
 // app.use(cors());
@@ -14,6 +15,7 @@ const { userRouter } = require("./routes/userRouter");
 app.use(express.json());
 
 app.use("/user", userRouter);
+app.use("/category", categoryRouter);
 
 const createUsers=()=>{
     users.map(user=>{

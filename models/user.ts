@@ -1,4 +1,5 @@
 "use strict";
+import { timeStamp } from 'console';
 import { Model, UUIDV4 } from 'sequelize';
 
 
@@ -54,10 +55,10 @@ module.exports = (sequelize: any, DataTypes :any) => {
      },
 
      last_login:{
-        type:DataTypes.Date
+      type: "TIMESTAMP",
+      defaultValue: sequelize.literal("CURRENT_TIMESTAMP"),
+      allowNull: false,
      }
-
-
 
     },{
       sequelize,

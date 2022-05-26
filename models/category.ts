@@ -22,10 +22,13 @@ name!: string;
 
     static associate(models:any) {
       // define association here
+      Category.belongsToMany(models.User,{
+        through: 'ProjectAssignments'
+      })
+
     }
   }
   Category.init({
-    
     
     id: {
       type: DataTypes.INTEGER,

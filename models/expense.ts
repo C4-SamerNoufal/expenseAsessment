@@ -8,11 +8,6 @@ interface ExpenseAttributes{
   spending_date:Date;
   amount:number
 }
-
-
-
-
-
 module.exports = (sequelize:any, DataTypes:any) => {
   class Expense extends Model<ExpenseAttributes> 
   implements ExpenseAttributes {
@@ -26,18 +21,15 @@ module.exports = (sequelize:any, DataTypes:any) => {
 id!:number;
 spending_date!: Date;
 amount!: number;
-
-
-
-
     static associate(models:any) {
       // define association here
       Expense.belongsToMany(models.User,{
         through: 'ProjectAssignments'
       })
-      Expense.belongsToMany(models.category,{
+      Expense.belongsToMany(models.Category,{
         through: 'ProjectAssignments'
       })
+    
     }
   }
   Expense.init({

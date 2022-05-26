@@ -7,6 +7,7 @@ import {
 interface ProjectAssignmentAttributes {
   CategoryId: number;
   UserId: string;
+  ExpenseId: number;
 }
 
 module.exports = (sequelize: any, DataTypes: any) => {
@@ -19,6 +20,7 @@ module.exports = (sequelize: any, DataTypes: any) => {
      */
     CategoryId!: number;
     UserId!: string;
+    ExpenseId!: number;
 
     static associate(models: any) {
       // define association here
@@ -42,7 +44,16 @@ module.exports = (sequelize: any, DataTypes: any) => {
         model: 'Users',
         key: 'id'
       }
-    }
+    },
+    ExpenseId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      references: {
+        model: 'Expenses',
+        key: 'id'
+      }
+    },
   }, {
     sequelize,
     modelName: 'ProjectAssignment',

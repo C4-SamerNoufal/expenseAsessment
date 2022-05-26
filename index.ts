@@ -5,7 +5,11 @@ import db from './models';
 import {users} from './seeders/users';
 import {categories} from './seeders/categories';
 import {expenses} from './seeders/expenses';
-import {projectassignments} from './seeders/projectassigments';
+
+
+// app.use(cors());
+
+app.use(express.json());
 
 const createUsers=()=>{
     users.map(user=>{
@@ -24,11 +28,7 @@ const createExpenses=()=>{
     // })  
 }
 
-// const createProjectAssignments=()=>{
-//     projectassignments.map(projectassignment=>{
-//         db.ProjectAssignment.create(projectassignment)
-//     })  
-// }
+
 
 app.get('/', (req, res) => {
 db.User.findAll({
@@ -48,3 +48,7 @@ db.sequelize.sync().then(() => {
         console.log(`App listening on port ${port}`)
     })
 })
+
+function cors(): any {
+    throw new Error('Function not implemented.');
+}

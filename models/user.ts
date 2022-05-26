@@ -1,6 +1,7 @@
 "use strict";
 import { timeStamp } from 'console';
 import { Model, UUIDV4 } from 'sequelize';
+import { parseConfigFileTextToJson } from 'typescript';
 
 
 interface UserAttributes{
@@ -26,19 +27,22 @@ module.exports = (sequelize: any, DataTypes :any) => {
      password !: string;
      last_login!:Date;
 
-     
+
     static associate(models :any) {
 
-      User.hasMany(models.Category, {
-        foreignKey: 'user_id',
-        as: 'categories',
-      });
-      User.hasMany(models.Expense, {
-        foreignKey: 'user_id',
-        as: 'expenses',
-      });
+      // User.hasMany(models.Category, {
+      //   foreignKey: 'user_id',
+      //   as: 'categories',
+      // });
+      // User.hasMany(models.Expense, {
+      //   foreignKey: 'user_id',
+      //   as: 'expenses',
+      // });
     
-      
+    
+      // toJSON(){
+      //   return {...this.getAttributes(),}
+      // }
       // define association here
     }
   }

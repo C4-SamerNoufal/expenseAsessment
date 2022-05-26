@@ -6,6 +6,7 @@ import {
 
 interface CategoryAttributes{
   id:number;
+  user_id:string;
   name:string;
 }
 
@@ -18,13 +19,19 @@ module.exports = (sequelize:any, DataTypes:any) => {
      * The `models/index` file will call this method automatically.
      */
 id!:number;
+user_id!: string;
 name!: string;
 
     static associate(models:any) {
       // define association here
-      Category.belongsToMany(models.User,{
-        through: 'ProjectAssignments'
+      Category.belongsTo(models.User,{
+        foreignKey: 'user_id',
+        as: 'user'
       })
+      Category.hasMany(models.Expense, {
+        foreignKey: 'category_id',
+        as: 'expenses',
+      });
 
     }
   }
@@ -36,10 +43,15 @@ name!: string;
       primaryKey: true,
       autoIncrement: true
     },
+    user_id:{
+      type:DataTypes.STRING,
+      allowNull: false,
+    },
     name:{
       type:DataTypes.STRING,
       allowNull: false,
-    }
+    },
+   
     },
   {
     sequelize,

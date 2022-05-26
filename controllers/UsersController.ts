@@ -11,6 +11,8 @@ const register = async (req: any, res: any) => {
         password,
       } = req.body;
 
+      const hashPassword = await bcrypt.hash(password, 10);
+
 
 
 

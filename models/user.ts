@@ -26,6 +26,17 @@ module.exports = (sequelize: any, DataTypes :any) => {
      password !: string;
      last_login!:Date;
     static associate(models :any) {
+
+      User.hasMany(models.Category, {
+        foreignKey: 'user_id',
+        as: 'categories',
+      });
+      User.hasMany(models.Expense, {
+        foreignKey: 'user_id',
+        as: 'expenses',
+      });
+    
+      
       // define association here
     }
   }

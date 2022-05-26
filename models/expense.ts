@@ -21,13 +21,17 @@ module.exports = (sequelize:any, DataTypes:any) => {
 id!:number;
 spending_date!: Date;
 amount!: number;
+
+
     static associate(models:any) {
       // define association here
-      Expense.belongsToMany(models.User,{
-        through: 'ProjectAssignments'
+      Expense.belongsTo(models.Category,{
+        foreignKey: 'category_id',
+        as: 'category'
       })
-      Expense.belongsToMany(models.Category,{
-        through: 'ProjectAssignments'
+      Expense.belongsTo(models.User,{
+        foreignKey: 'user_id',
+        as: 'user'
       })
     
     }

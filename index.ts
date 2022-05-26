@@ -24,15 +24,14 @@ const createExpenses=()=>{
     // })  
 }
 
-const createProjectAssignments=()=>{
-    projectassignments.map(projectassignment=>{
-        db.ProjectAssignment.create(projectassignment)
-    })  
-}
+// const createProjectAssignments=()=>{
+//     projectassignments.map(projectassignment=>{
+//         db.ProjectAssignment.create(projectassignment)
+//     })  
+// }
 
 app.get('/', (req, res) => {
 db.User.findAll({
-    attributes: ['name']
  
 }).then((result: object)=>console.log(JSON.stringify(result)))
 .catch((err:object)=>console.log("error: " +err));

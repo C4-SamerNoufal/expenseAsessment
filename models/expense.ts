@@ -5,6 +5,8 @@ import {
 
 interface ExpenseAttributes{
   id:number;
+  user_id:string;
+  category_id:number;
   spending_date:Date;
   amount:number
 }
@@ -19,6 +21,8 @@ module.exports = (sequelize:any, DataTypes:any) => {
      */
 
 id!:number;
+user_id!:string;
+category_id!:number;
 spending_date!: Date;
 amount!: number;
 
@@ -43,6 +47,14 @@ amount!: number;
       allowNull: false,
       primaryKey: true,
       autoIncrement: true
+    },
+    user_id:{
+      type:DataTypes.STRING,
+      allowNull: false,
+    },
+    category_id:{
+      type:DataTypes.INTEGER,
+      allowNull: false,
     },
 
     spending_date:{

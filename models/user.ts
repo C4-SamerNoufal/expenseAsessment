@@ -25,6 +25,8 @@ module.exports = (sequelize: any, DataTypes :any) => {
      email !: string;
      password !: string;
      last_login!:Date;
+
+     
     static associate(models :any) {
 
       User.hasMany(models.Category, {

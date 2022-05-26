@@ -39,7 +39,7 @@ db.User.findAll({
 
 // createUsers();
 // createCategories();
-createExpenses();
+// createExpenses();
 // createProjectAssignments();
 
 

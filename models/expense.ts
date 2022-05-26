@@ -32,6 +32,12 @@ amount!: number;
 
     static associate(models:any) {
       // define association here
+      Expense.belongsToMany(models.User,{
+        through: 'ProjectAssignments'
+      })
+      Expense.belongsToMany(models.category,{
+        through: 'ProjectAssignments'
+      })
     }
   }
   Expense.init({

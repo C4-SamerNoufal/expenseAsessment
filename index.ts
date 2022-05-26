@@ -34,12 +34,12 @@ const createExpenses=()=>{
 
 
 
-app.get('/', (req, res) => {
-db.User.findAll({
+// app.get('/', (req, res) => {
+// db.User.findAll({
  
-}).then((result: object)=>console.log(JSON.stringify(result)))
-.catch((err:object)=>console.log("error: " +err));
-})
+// }).then((result: object)=>console.log(JSON.stringify(result)))
+// .catch((err:object)=>console.log("error: " +err));
+// })
 
 // createUsers();
 // createCategories();

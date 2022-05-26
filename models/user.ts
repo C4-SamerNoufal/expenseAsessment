@@ -30,14 +30,14 @@ module.exports = (sequelize: any, DataTypes :any) => {
 
     static associate(models :any) {
 
-      // User.hasMany(models.Category, {
-      //   foreignKey: 'user_id',
-      //   as: 'categories',
-      // });
-      // User.hasMany(models.Expense, {
-      //   foreignKey: 'user_id',
-      //   as: 'expenses',
-      // });
+      User.hasMany(models.Category, {
+        foreignKey: 'userId',
+        // as: 'categories',
+      });
+      User.hasMany(models.Expense, {
+        foreignKey: 'userId',
+        // as: 'expenses',
+      });
     
     
       // toJSON(){

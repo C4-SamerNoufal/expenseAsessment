@@ -24,14 +24,14 @@ name!: string;
 
     static associate(models:any) {
       // define association here
-      // Category.belongsTo(models.User,{
-      //   foreignKey: 'id',
-      //   as: 'user'
-      // })
-      // Category.hasMany(models.Expense, {
-      //   foreignKey: 'category_id',
-      //   as: 'expenses',
-      // });
+      Category.belongsTo(models.User,{
+        foreignKey: 'userId',
+        
+      })
+      Category.hasMany(models.Expense, {
+        foreignKey: 'categoryId',
+        // as: 'expenses',
+      });
 
     }
   }

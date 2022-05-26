@@ -29,14 +29,14 @@ amount!: number;
 
     static associate(models:any) {
       // define association here
-      // Expense.belongsTo(models.Category,{
-      //   foreignKey: 'category_id',
-      //   as: 'category'
-      // })
-      // Expense.belongsTo(models.User,{
-      //   foreignKey: 'user_id',
-      //   as: 'user'
-      // })
+      Expense.belongsTo(models.Category,{
+        foreignKey: 'categoryId',
+        // as: 'category'
+      })
+      Expense.belongsTo(models.User,{
+        foreignKey: 'userId',
+        // as: 'user'
+      })
     
     }
   }

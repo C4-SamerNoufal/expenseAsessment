@@ -1,13 +1,14 @@
-//import connenction from database
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const { db } = require("../models/index");
-const { User } = require("../models/user");
+const { db } = require("../models/");
+const { User } = require("../models/user.ts");
+
 import { appendFile } from 'fs';
 import{v4 as uuidv4} from 'uuid';
 
+
 const register = async (req: any, res: any) => {
-// const id = uuidv4;
+
     const {
         name,
         email,

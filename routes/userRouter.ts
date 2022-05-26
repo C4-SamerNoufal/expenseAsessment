@@ -4,6 +4,7 @@ const userRouter = express.Router();
 
 const {
     register,
+    getAllUsers,
   
   } = require("../controllers/UsersControllers");
 

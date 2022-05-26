@@ -7,6 +7,7 @@ interface UserAttributes{
   name:string;
   email:string;
  password:string;
+//  last_login: Date;
 }
 
 
@@ -22,6 +23,7 @@ module.exports = (sequelize: any, DataTypes :any) => {
      name !: string;
      email !: string;
      password !: string;
+    //  last_login!:Date;
     static associate(models :any) {
       // define association here
     }
@@ -47,9 +49,16 @@ module.exports = (sequelize: any, DataTypes :any) => {
      },
 
      password:{
-       type: DataTypes.STRING,
+      type: DataTypes.STRING,
        allowNull: false
-     }
+     },
+
+    //  last_login:{
+    //     type:DataTypes.Date
+    //  }
+
+
+
     },{
       sequelize,
       modelName: "User",

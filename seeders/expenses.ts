@@ -1,9 +1,7 @@
 
-
-
 export const expenses = [
 {
-amount: 60,
+amount: 60
 },
 
  

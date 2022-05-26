@@ -3,9 +3,11 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const { db } = require("../models/index");
 const { User } = require("../models/user");
+import { appendFile } from 'fs';
+import{v4 as uuidv4} from 'uuid';
 
 const register = async (req: any, res: any) => {
-
+// const id = uuidv4;
     const {
         name,
         email,
@@ -24,6 +26,20 @@ const register = async (req: any, res: any) => {
 
 }
 
+const getAllUsers = async (req: any,res: any)=>{
+    try{
+        const users = await User.find()
+        return res.json(users)
+    }catch(err){
+        console.log(err)
+        return res.status(500).json({error:"Something Wrong"})
+    }
+}
+
+
+
+
 module.exports = {
     register,
+    getAllUsers,
   };

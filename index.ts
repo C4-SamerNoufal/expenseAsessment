@@ -5,11 +5,15 @@ import db from './models';
 import {users} from './seeders/users';
 import {categories} from './seeders/categories';
 import {expenses} from './seeders/expenses';
+///////////////
+const { userRouter } = require("./routes/userRouter");
 
 
 // app.use(cors());
 
 app.use(express.json());
+
+app.use("/user", userRouter);
 
 const createUsers=()=>{
     users.map(user=>{

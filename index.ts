@@ -23,13 +23,20 @@ const createCategories=()=>{
    
 }
 
-const createProjectAssignments=()=>{
-    projectassignments.map(projectassignment=>{
-        db.ProjectAssignment.create(projectassignment)
+// const createProjectAssignments=()=>{
+//     projectassignments.map(projectassignment=>{
+//         db.ProjectAssignment.create(projectassignment)
       
-    })  
+//     })  
    
-}
+// }
+
+
+db.Category.findAll({
+    include: {
+        model: db.User
+    }
+}).then((result: object)=>console.log(JSON.stringify(result))).catch((err:object)=>console.log(err))
 
 
 // createUsers();

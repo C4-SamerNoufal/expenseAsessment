@@ -68,12 +68,6 @@ amount!: number;
       allowNull: false,
     }
 
-
- 
-
-
-
-
   }, {
     sequelize,
     modelName: 'Expense',

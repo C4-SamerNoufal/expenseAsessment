@@ -23,9 +23,9 @@ const createCategories=()=>{
     })  
 }
 const createExpenses=()=>{
-    // categories.map(expense=>{
-        db.Expense.create({amount: 60},)
-    // })  
+    expenses.map(expense=>{
+        db.Expense.create(expense)
+    })  
 }
 
 
@@ -39,7 +39,7 @@ db.User.findAll({
 
 // createUsers();
 // createCategories();
-// createExpenses();
+createExpenses();
 // createProjectAssignments();
 
 

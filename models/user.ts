@@ -6,7 +6,7 @@ interface UserAttributes{
   id:string;
   name:string;
   email:string;
- password:string;
+  password:string;
 //  last_login: Date;
 }
 

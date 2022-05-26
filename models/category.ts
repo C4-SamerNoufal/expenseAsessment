@@ -1,5 +1,5 @@
 'use strict';
-import { sequelize } from ".";
+// import { sequelize } from ".";
 import {
   Model
 } from 'sequelize';

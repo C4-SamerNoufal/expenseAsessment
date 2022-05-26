@@ -3,17 +3,18 @@ const app=express();
 const port=process.env.PORT || 3000;
 import db from './models';
 import {users} from './seeders/users';
+import {categories} from './seeders/categories';
 
 
-const createUsers=()=>{
-    users.map(user=>{
-        db.User.create(user)
+const createCategories=()=>{
+    categories.map(category=>{
+        db.Category.create(category)
       
     })  
    
 }
 
-createUsers();
+// createCategories();
 
 
 db.sequelize.sync().then(()=>{

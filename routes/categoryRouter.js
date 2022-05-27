@@ -5,7 +5,8 @@ const categoryRouter = express.Router();
 
 const {
     addCategory,
-    getCategories
+    getCategories,
+    updateCategory
   
   } = require("../controllers/categoriesControllers");
 
@@ -13,6 +14,7 @@ const {
   //1- create end points for register
   categoryRouter.post("/add", addCategory);
   categoryRouter.get("/", getCategories);
+  commentRouter.put("/:id", authentication, updateCategory);
 
 
   module.exports = { categoryRouter };

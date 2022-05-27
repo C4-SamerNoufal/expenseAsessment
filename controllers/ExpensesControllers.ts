@@ -34,6 +34,24 @@ const updateExpense = async(req:any,res:any)=>{
             }
 }
 
+const deleteExpense = async (req:any,res:any)=>{
+
+    const id = req.params.id
+
+    try {
+        const expense = await Expense.findOne({ where: { id } })
+        await expense.destroy()
+    
+        return res.json({ message: 'Expense deleted!' })
+        
+      } catch (err) {
+        console.log(err)
+        return res.status(500).json({ error: 'Something went wrong' })
+      }
+
+}
+
+
 module.exports = {
     addExpense,
     updateExpense,

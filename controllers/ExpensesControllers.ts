@@ -20,11 +20,23 @@ try{
 }
 }
 
-
-
+const updateExpense = async(req:any,res:any)=>{
+    const ExpenseId = req.params.id;
+    const {amount} = req.body;
+    try{
+        const expense = await Expense.findOne({where:ExpenseId})
+        expense.amount = amount;
+        await expense.save()
+        return res.json(expense)
+    } catch (err) {
+              console.log(err)
+              return res.status(500).json({ error: 'Something went wrong' })
+            }
+}
 
 module.exports = {
     addExpense,
+    updateExpense,
     
   };
 

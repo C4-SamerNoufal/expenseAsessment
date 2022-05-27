@@ -10,7 +10,7 @@ const { userRouter } = require("./routes/userRouter");
 const { categoryRouter } = require("./routes/categoryRouter");
 import Redis from 'redis'
 
-const redisClient=Redis.createClient();
+// const redisClient=Redis.createClient();
 
 app.use(express.json());
 

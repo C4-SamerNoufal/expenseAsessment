@@ -4,7 +4,7 @@ import Redis from 'redis'
 const { db } = require("../models/");
 const { Category } = require("../models/category.ts");
 const { User } = require("../models/user.ts");
-const { redisClient } = require("../models/");
+const { redisClient } = require("../index.ts");
 
 
 
@@ -25,6 +25,7 @@ try{
 }
 /////////////////////////////////////////////////
 const getCategories = async(req:any,res:any)=>{
+    
 redisClient.get('categories',async (error: any,categories: string | null)=>{
     if(error) console.log(error)
     if(categories !=null){

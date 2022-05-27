@@ -1,7 +1,7 @@
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const { db } = require("../models/");
-// const { User } = require("../models/user.ts");
+
 const Models = require('./../models');
 const User = Models.User;
 

@@ -1,7 +1,6 @@
 const { db } = require("../models/");
 
 const { Expense } = require("../models/category.ts");
-// const { User } = require("../models/user.ts");
 
 const addExpense = async (req:any,res:any)=>{
 

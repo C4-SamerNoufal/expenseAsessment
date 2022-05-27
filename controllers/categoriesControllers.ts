@@ -29,24 +29,6 @@ const getCategories = async(req:any,res:any)=>{
 }
 }
 
-// app.put('/users/:uuid', async (req, res) => {
-//     const uuid = req.params.uuid
-//     const { name, email, role } = req.body
-//     try {
-//       const user = await User.findOne({ where: { uuid } })
-  
-//       user.name = name
-//       user.email = email
-//       user.role = role
-  
-//       await user.save()
-  
-//       return res.json(user)
-//     } catch (err) {
-//       console.log(err)
-//       return res.status(500).json({ error: 'Something went wrong' })
-//     }
-//   })
 
 const updateCategory = async(req:any,res:any)=>{
     const categoryId = req.params.id;
@@ -61,16 +43,6 @@ const updateCategory = async(req:any,res:any)=>{
               return res.status(500).json({ error: 'Something went wrong' })
             }
 }
-
-
-
-
-
-
-
-
-
-
 
 
 module.exports = {

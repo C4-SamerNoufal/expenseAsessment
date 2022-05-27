@@ -26,6 +26,7 @@ name!: string;
       // define association here
       Category.belongsTo(models.User,{
         foreignKey: 'userId',
+        as: 'user',
         
       })
       Category.hasMany(models.Expense, {

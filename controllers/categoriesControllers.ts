@@ -20,7 +20,7 @@ try{
 
 const getCategories = async(req:any,res:any)=>{
     try{
-        const categories = await Category.findAll({include:[User]})
+        const categories = await Category.findAll({include:['user']})
         return res.json(categories)
 
 }catch(err){
@@ -34,7 +34,14 @@ const getCategories = async(req:any,res:any)=>{
 
 
 
+
+
+
+
+
+
 module.exports = {
-    addCategory
+    addCategory,
+    getCategories
   };
 

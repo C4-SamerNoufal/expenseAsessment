@@ -32,7 +32,7 @@ module.exports = (sequelize: any, DataTypes :any) => {
 
       User.hasMany(models.Category, {
         foreignKey: 'userId',
-        // as: 'categories',
+        as: 'categories',
       });
       User.hasMany(models.Expense, {
         foreignKey: 'userId',

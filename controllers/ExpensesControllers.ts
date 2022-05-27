@@ -1,4 +1,5 @@
-// const { db } = require("../models/");
+const { db } = require("../models/");
+
 const { Expense } = require("../models/category.ts");
 // const { User } = require("../models/user.ts");
 

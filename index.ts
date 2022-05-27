@@ -8,9 +8,11 @@ import {expenses} from './seeders/expenses';
 ///////////////
 const { userRouter } = require("./routes/userRouter");
 const { categoryRouter } = require("./routes/categoryRouter");
+import Redis from 'redis'
+
+const redisClient=Redis.createClient();
 
 
-// app.use(cors());
 
 app.use(express.json());
 

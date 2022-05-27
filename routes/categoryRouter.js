@@ -14,4 +14,5 @@ categoryRouter.post("/add", authentication, addCategory);
 categoryRouter.get("/", authentication, getCategories);
 categoryRouter.put("/:id", authentication, updateCategory);
 
+
 module.exports = { categoryRouter };

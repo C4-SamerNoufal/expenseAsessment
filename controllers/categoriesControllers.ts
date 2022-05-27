@@ -1,6 +1,12 @@
+
+import Redis from 'redis'
+
 const { db } = require("../models/");
 const { Category } = require("../models/category.ts");
 const { User } = require("../models/user.ts");
+const { redisClient } = require("../models/");
+
+
 
 const addCategory = async (req:any,res:any)=>{
 
@@ -19,9 +25,20 @@ try{
 }
 
 const getCategories = async(req:any,res:any)=>{
+
+    
+
+
+
     try{
         const categories = await Category.findAll({include:['user']})
+
+        redisClient.set('categories',3600,categories);
+
+
         return res.json(categories)
+
+        
 
 }catch(err){
     console.log(err)

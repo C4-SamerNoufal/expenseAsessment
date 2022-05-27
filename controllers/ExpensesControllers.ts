@@ -43,7 +43,7 @@ const deleteExpense = async (req:any,res:any)=>{
         await expense.destroy()
     
         return res.json({ message: 'Expense deleted!' })
-        
+
       } catch (err) {
         console.log(err)
         return res.status(500).json({ error: 'Something went wrong' })
@@ -55,6 +55,7 @@ const deleteExpense = async (req:any,res:any)=>{
 module.exports = {
     addExpense,
     updateExpense,
+    deleteExpense,
     
   };
 

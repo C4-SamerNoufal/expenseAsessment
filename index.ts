@@ -12,8 +12,6 @@ import Redis from 'redis'
 
 const redisClient=Redis.createClient();
 
-
-
 app.use(express.json());
 
 app.use("/user", userRouter);
@@ -35,21 +33,6 @@ const createExpenses=()=>{
         db.Expense.create(expense)
     })  
 }
-
-
-
-// app.get('/', (req, res) => {
-// db.User.findAll({
- 
-// }).then((result: object)=>console.log("userssssssssssssssssssssssssssssss" + JSON.stringify(result)))
-// .catch((err:object)=>console.log("errorrrrrrrrrrrrrrrrrrrrrrrrrrrrrr: " +err));
-// })
-
-// createUsers();
-// createCategories();
-// createExpenses();
-// createProjectAssignments();
-
 
 db.sequelize.sync().then(() => {
     app.listen(port, () => {

@@ -23,27 +23,29 @@ try{
     return res.status(500).json(err)
 }
 }
-
+/////////////////////////////////////////////////
 const getCategories = async(req:any,res:any)=>{
+redisClient.get('categories',async (error: any,categories: string | null)=>{
+    if(error) console.log(error)
+    if(categories !=null){
+        return res.json(JSON.parse(categories))
 
+    }else{
+        try{
+            const categories =await Category.findAll({include:['user']})
     
+            redisClient.set('categories',3600,JSON.stringify(categories));
+    
+    
+            return res.json(categories)
+    
+    }catch(err){
+        console.log(err)
+        return res.status(500).json(err)
+    }
+    }
+})
 
-
-
-    try{
-        const categories = await Category.findAll({include:['user']})
-
-        redisClient.set('categories',3600,categories);
-
-
-        return res.json(categories)
-
-        
-
-}catch(err){
-    console.log(err)
-    return res.status(500).json(err)
-}
 }
 
 
